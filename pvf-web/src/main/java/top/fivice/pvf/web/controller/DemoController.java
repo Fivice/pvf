@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class DemoController {
+
     @GetMapping("index")
-    public String test(){
+    public String hello(){
         return "index";
     }
 }
