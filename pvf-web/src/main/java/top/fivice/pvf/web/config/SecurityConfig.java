@@ -17,7 +17,14 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        //配置认证方式等
+        super.configure(auth);
+    }
+
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //http相关的配置，包括登入登出、异常处理、会话管理等
         http
                 .authorizeRequests()
                     .antMatchers("/", "/home").permitAll()
