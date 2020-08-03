@@ -1,8 +1,8 @@
 package top.fivice.pvf.web;
 
 import org.springframework.boot.test.context.SpringBootTest;
-import top.fivice.pvf.dao.mapper.UserMapper;
-import top.fivice.pvf.domain.userAndPermission.User;
+import top.fivice.pvf.dao.mapper.user.UserMapper;
+import top.fivice.pvf.domain.userAndPermission.SysUser;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,8 +15,8 @@ public class Test {
     @org.junit.jupiter.api.Test
     public void testSelect() {
         System.out.println(("----- selectAll method test ------"));
-        List<User> userList = userMapper.selectList(null);
-        userList.forEach(System.out::println);
+        List<SysUser> sysUserList = userMapper.selectList(null);
+        sysUserList.forEach(System.out::println);
     }
 
 }

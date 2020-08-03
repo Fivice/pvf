@@ -1,4 +1,4 @@
 package top.fivice.pvf.domain.userAndPermission;
 
-public class Role {
+public class SysPermission {
 }

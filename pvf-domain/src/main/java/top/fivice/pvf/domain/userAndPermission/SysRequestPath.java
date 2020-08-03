@@ -1,4 +1,4 @@
 package top.fivice.pvf.domain.userAndPermission;
 
-public class Permission {
+public class SysRequestPath {
 }
