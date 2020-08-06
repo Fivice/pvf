@@ -14,9 +14,7 @@ public class Test {
 
     @org.junit.jupiter.api.Test
     public void testSelect() {
-        System.out.println(("----- selectAll method test ------"));
-        List<SysUser> sysUserList = userMapper.selectList(null);
-        sysUserList.forEach(System.out::println);
+       SysUser sysUser = userMapper.selectByName("user1");
     }
 
 }

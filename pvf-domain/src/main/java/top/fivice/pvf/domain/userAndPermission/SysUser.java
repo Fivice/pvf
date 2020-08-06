@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author wubin
@@ -91,6 +92,9 @@ public class SysUser {
      */
     @TableField("update_user")
     private  Integer updateUser;
+
+
+    private List<SysRole> sysRoleList;
 
     public Integer getId() {
         return id;
@@ -194,5 +198,13 @@ public class SysUser {
 
     public void setUpdateUser(Integer updateUser) {
         this.updateUser = updateUser;
+    }
+
+    public List<SysRole> getSysRoleList() {
+        return sysRoleList;
+    }
+
+    public void setSysRoleList(List<SysRole> sysRoleList) {
+        this.sysRoleList = sysRoleList;
     }
 }
