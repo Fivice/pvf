@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="top.fivice.pvf.dao.mapper.user.UserMapper">
+<mapper namespace="top.fivice.pvf.dao.mapper.user.SysUserMapper">
     <!--根据用户名查询用户-->
     <resultMap id="SysUserMap" type="top.fivice.pvf.domain.userAndPermission.SysUser">
         <id column="id" property="id"/>
@@ -16,14 +16,9 @@
         <result column="update_time" property="updateTime"/>
         <result column="create_user" property="createUser"/>
         <result column="update_user" property="updateUser"/>
-        <collection property="sysRoleList" ofType="top.fivice.pvf.domain.userAndPermission.SysRole">
-            <id column="id" property="id"/>
-            <result column="role_name" property="roleName"/>
-            <result column="role_description" property="roleDescription"/>
-            <result column="role_code" property="roleCode"/>
-        </collection>
+
     </resultMap>
-    <select id="selectByName" resultMap="SysUserMap">
-        select su.*,sr.* from sys_user su ,sys_user_role_relation surr ,sys_role sr where su.id = surr.user_id and surr.role_id = sr.id and su.account = #{userName};
+    <select id="selectUserByName" resultMap="SysUserMap" parameterType="string">
+        select su.* from sys_user su where su.account = #{userName};
     </select>
 </mapper>

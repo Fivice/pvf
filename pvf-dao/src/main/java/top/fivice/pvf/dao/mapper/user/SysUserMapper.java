@@ -5,7 +5,7 @@ import top.fivice.pvf.domain.userAndPermission.SysUser;
 
 import java.util.List;
 
-public interface UserMapper extends BaseMapper<SysUser> {
+public interface SysUserMapper extends BaseMapper<SysUser> {
 
-    SysUser selectByName(String userName);
+    SysUser selectUserByName(String userName);
 }
