@@ -7,6 +7,7 @@ import top.fivice.pvf.dao.mapper.user.SysUserMapper;
 import top.fivice.pvf.domain.userAndPermission.SysRole;
 import top.fivice.pvf.domain.userAndPermission.SysUser;
 import top.fivice.pvf.domain.userAndPermission.SysUserRoleRelation;
+import top.fivice.pvf.service.user.SysUserService;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,12 +20,14 @@ public class Test {
     private SysUserRoleRelationMapper sysUserRoleRelationMapper;
     @Resource
     private SysRoleMapper sysRoleMapper;
+    @Resource
+    private SysUserService sysUserService;
 
     @org.junit.jupiter.api.Test
     public void testSelect() {
 
-      List<SysRole> list = sysRoleMapper.selectRoleByName(1);
-
+        List<SysRole> list = sysRoleMapper.selectRoleByName(1);
+        SysUser sysUser = sysUserService.selectSysUserByUserName("user");
     }
 
 }

@@ -1,4 +1,4 @@
-package top.fivice.pvf.web;
+package top.fivice.pvf;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
