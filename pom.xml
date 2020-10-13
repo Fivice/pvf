@@ -24,6 +24,7 @@
 
     <properties>
         <java.version>8</java.version>
+        <elasticsearch.version>6.8.12</elasticsearch.version>
     </properties>
 
     <dependencies>
@@ -68,6 +69,7 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.8.1</version>
         </dependency>
+
     </dependencies>
     <dependencyManagement>
         <!--统一依赖管理，方便版本号修改-->
@@ -84,32 +86,37 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-
+            <!--elasticsearch-->
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
             <!--模块间依赖-->
             <dependency>
                 <groupId>top.fivice</groupId>
                 <artifactId>pvf-domain</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>top.fivice</groupId>
                 <artifactId>pvf-core</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>top.fivice</groupId>
                 <artifactId>pvf-dao</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>top.fivice</groupId>
                 <artifactId>pvf-web</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>top.fivice</groupId>
                 <artifactId>pvf-service</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
